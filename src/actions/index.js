@@ -27,8 +27,8 @@ export const fetchStart = () => {
 
 
 export const FETCH_SUCCESS = 'FETCH_SUCCESS'
-export const fetchSucces = (smurf) => {
-    return ({type: FETCH_SUCCESS, payload: smurf})
+export const fetchSucces = (smurfs) => {
+    return ({type: FETCH_SUCCESS, payload: smurfs})
 }
 
 export const FETCH_FAIL = 'FETCH_FAIL'
