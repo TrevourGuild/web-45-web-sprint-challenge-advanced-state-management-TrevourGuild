@@ -4,10 +4,13 @@ import AddForm from './components/AddForm';
 import SmurfList from './components/SmurfList';
 import Header from './components/Header';
 
+import { fetchSmurfs } from "./actions";
+
 import axios from 'axios';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import "./App.css";
+import { connect } from "react-redux";
 
 class App extends Component {
   componentDidMount() {
@@ -30,7 +33,14 @@ class App extends Component {
   }
 }
 
-export default App;
+const mapStateToProps = state => {
+  return {
+    smurf: state.smurf
+  }
+}
+
+export default connect(mapStateToProps, {fetchSmurfs})(App);
+
 
 //Task List:
 //1. Connect the fetchSmurfs actions to the App component.
